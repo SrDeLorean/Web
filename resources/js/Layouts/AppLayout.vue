@@ -20,6 +20,9 @@
                             <jet-nav-link :href="route('users.index')" :active="route().current('users.index')">
                                 Users
                             </jet-nav-link>
+                            <jet-nav-link :href="route('noticias.index')" :active="route().current('noticias.index')">
+                                Noticias
+                            </jet-nav-link>
                         </div>
                     </div>
 
@@ -126,6 +129,9 @@
                     </jet-responsive-nav-link>
                     <jet-responsive-nav-link :href="route('users.index')" :active="route().current('users.index')">
                         Users
+                    </jet-responsive-nav-link>
+                    <jet-responsive-nav-link :href="route('noticias.index')" :active="route().current('noticias.index')">
+                        Noticia
                     </jet-responsive-nav-link>
                 </div>
 

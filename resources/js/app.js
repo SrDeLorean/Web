@@ -6,6 +6,9 @@ import { InertiaApp } from '@inertiajs/inertia-vue';
 import { InertiaForm } from 'laravel-jetstream';
 import PortalVue from 'portal-vue';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 Vue.mixin({ methods: { route } });
 Vue.use(InertiaApp);
 Vue.use(InertiaForm);

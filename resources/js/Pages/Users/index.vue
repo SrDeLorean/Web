@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Users
+                Hola mundo
             </h2>
         </template>
 
@@ -11,16 +11,23 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <pre>{{users}}</pre>
                 </div>
+                        <div class="py-12">
+
+                <button type="button" class="btn btn-primary">Primary</button>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+               </nav>
+                </div>
+
             </div>
         </div>
 
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </div>
     </app-layout>
 </template>
 

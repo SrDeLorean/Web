@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Models\User;
+use App\Models\User;
+use App\Http\Controllers\NoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/users', functio
         'users' => User::all()
     ]);
 })->name('users.index');
+
+Route::resource('noticias', NoticiaController::class);
+
+
+

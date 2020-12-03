@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>DeloreanCompany</title>
 
         <meta charset="utf-8" />
         <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
         <link rel="icon" type="image/png" href="../assets/img/favicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>
-            Pagina SrDeLorean
+            DeloreanCompany
         </title>
         <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
         <!--     Fonts and icons     -->
@@ -24,6 +24,7 @@
 
     </head>
     <body class="antialiased">
+        <!-- Navegación -->
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
                 <div class="container">
@@ -38,21 +39,18 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
                         <li class="dropdown nav-item">
-                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="material-icons">apps</i> Components
+                            <a href="#" class="nav-link" data-toggle="dropdown">
+                            <i class="material-icons">apps</i> Inicio
                             </a>
-                            <div class="dropdown-menu dropdown-with-icons">
-                            <a href="../index.html" class="dropdown-item">
-                                <i class="material-icons">layers</i> All Components
-                            </a>
-                            <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
-                                <i class="material-icons">content_paste</i> Documentation
-                            </a>
-                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro" target="_blank">
-                            <i class="material-icons">unarchive</i> Upgrade to PRO
+                            <i class="material-icons">unarchive</i> Novedades
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro" target="_blank">
+                            <i class="material-icons">unarchive</i> Noticias
                             </a>
                         </li>
                         </li>
@@ -71,25 +69,23 @@
             </nav>
         </div>
 
-      
+        <!-- Informacion -->
         <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/profile_city.jpg')">
             <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                <h1 class="title">Your Story Starts With Us.</h1>
-                <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
-                <br>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
-                    <i class="fa fa-play"></i> Watch video
-                </a>
+                <div class="row">
+                    <div class="col-md-6">
+                    <h1 class="title">DeLorean Company</h1>
+                    <h4>Somos una compañía que enfoca sus recursos en buscar soluciones eficientes y eficaces para todos nuestros clientes, además de querer ayudar a nuestros clientes, DeLorean Company enfoca recursos en investigación para poder la calidad de vida de las personas.</h4>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
+        <!-- Novedades -->
         <div class="main main-raised">
             <div class="container">
                 <div class="section text-center">
+                    <h2 class="title">Novedades</h2>
                     <div class="row">
                         <div class="col-md-12 ml-auto mr-auto">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -123,132 +119,169 @@
                 </div>
             </div>
     
-            
-            
+            <!-- Noticias -->
             <div class="section text-center">
-                <h2 class="title">Here is our team</h2>
+                <h2 class="title">Noticias</h2>
                 <div class="team">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <div class="card card-plain">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                                    </div>
+                                    <h4 class="card-title">Gigi Hadid
+                                        <br>
+                                        <small class="card-description text-muted">Model</small>
+                                    </h4>
+                                    <div class="card-body">
+                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                    </div>
+                                    <div class="card-footer justify-content-center">
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <div class="card card-plain">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <img src="../assets/img/faces/christian.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                                    </div>
+                                    <h4 class="card-title">Christian Louboutin
+                                        <br>
+                                        <small class="card-description text-muted">Designer</small>
+                                    </h4>
+                                    <div class="card-body">
+                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                    </div>
+                                    <div class="card-footer justify-content-center">
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <div class="card card-plain">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <img src="../assets/img/faces/kendall.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                                    </div>
+                                    <h4 class="card-title">Kendall Jenner
+                                        <br>
+                                        <small class="card-description text-muted">Model</small>
+                                    </h4>
+                                    <div class="card-body">
+                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                    </div>
+                                    <div class="card-footer justify-content-center">
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
+                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contacto -->
+            <div class="section section-contacts">
                 <div class="row">
-                    <div class="col-md-4">
-                    <div class="team-player">
-                        <div class="card card-plain">
-                        <div class="col-md-6 ml-auto mr-auto">
-                            <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                        </div>
-                        <h4 class="card-title">Gigi Hadid
-                            <br>
-                            <small class="card-description text-muted">Model</small>
-                        </h4>
-                        <div class="card-body">
-                            <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                            <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                        </div>
-                        <div class="card-footer justify-content-center">
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="team-player">
-                        <div class="card card-plain">
-                        <div class="col-md-6 ml-auto mr-auto">
-                            <img src="../assets/img/faces/christian.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                        </div>
-                        <h4 class="card-title">Christian Louboutin
-                            <br>
-                            <small class="card-description text-muted">Designer</small>
-                        </h4>
-                        <div class="card-body">
-                            <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                            <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                        </div>
-                        <div class="card-footer justify-content-center">
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="team-player">
-                        <div class="card card-plain">
-                        <div class="col-md-6 ml-auto mr-auto">
-                            <img src="../assets/img/faces/kendall.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                        </div>
-                        <h4 class="card-title">Kendall Jenner
-                            <br>
-                            <small class="card-description text-muted">Model</small>
-                        </h4>
-                        <div class="card-body">
-                            <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                            <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                        </div>
-                        <div class="card-footer justify-content-center">
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                            <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                        </div>
-                        </div>
-                    </div>
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h2 class="text-center title">Contactenos</h2>
+                        <h4 class="text-center description">Si tiene alguna pregunta o sugerencia para la compañía puede realizarla a continuación, esto nos ayudara a mejorar para brindar el mejor servicio que este en nuestras manos, avancemos en conjunto.</h4>
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Nombre</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Correo</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleMessage" class="bmd-label-floating">Mensaje</label>
+                                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 ml-auto mr-auto text-center">
+                                    <button class="btn btn-primary btn-raised">
+                                    Enviar Mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                </div>
             </div>
-            </div>
+
+        <!-- Div de cierre -->
+        </div>
         
+    </body>
 
-
-      
-        <footer class="footer footer-default">
-            <div class="container">
+    <footer class="footer footer-default">
+        <div class="container">
             <nav class="float-left">
                 <ul>
-                <li>
-                    <a href="https://www.creative-tim.com/">
-                    Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/presentation">
-                    About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/blog">
-                    Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/license">
-                    Licenses
-                    </a>
-                </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/">
+                        Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/presentation">
+                        About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/blog">
+                        Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/license">
+                        Licenses
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="copyright float-right">
                 &copy;
                 <script>
                 document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by
-                <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
-            </div>
-            </div>
-        </footer>
-        <!--   Core JS Files   -->
-        <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
-        <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-        <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-        <script src="../assets/js/plugins/moment.min.js"></script>
-        <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-        <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-        <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-        <!--  Google Maps Plugin    -->
-        <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-        <script src="../assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
-    </body>
+                </script>, hecho por <i class="material-icons">favorite</i> Creado por
+                <a href="https://srdelorean.000webhostapp.com/perfil/" target="_blank"> Sebastián Ibarra</a> por una mejor sociedad.
+            </div> 
+        </div>
+    </footer>
+    
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
 
 </html>
