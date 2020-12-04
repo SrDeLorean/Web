@@ -9,6 +9,13 @@ import PortalVue from 'portal-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+
+import 'datatables/media/css/jquery.dataTables.css';
+//import 'datatables/media/css/jquery.dataTables.min.css';
+
+//import 'datatables.net-responsive-bs/css/responsive.bootstrap.css';
+import 'datatables.net-responsive-bs/css/responsive.bootstrap.min.css';
+
 Vue.mixin({ methods: { route } });
 Vue.use(InertiaApp);
 Vue.use(InertiaForm);

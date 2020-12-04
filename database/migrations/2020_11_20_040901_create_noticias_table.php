@@ -17,10 +17,10 @@ class CreateNoticiasTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('descripcion');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('autor');
-            $table->integer('valoracion');
-            $table->integer('cantidad');
+            $table->integer('valoracion')->nullable();
+            $table->integer('cantidad')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

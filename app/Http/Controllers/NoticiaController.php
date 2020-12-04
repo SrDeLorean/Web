@@ -16,21 +16,8 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Noticias/index', [
-            'noticias' => Noticia::all()->map(function ($noticia) {
-                return [
-                    'id' => $noticia->id,
-                    'titulo' => $noticia->titulo,
-                    'descripcion' => $noticia->descripcion,
-                    'autor' => $noticia->autor,
-                    'valoracion' => $noticia->valoracion,
-                    'cantidad' => $noticia->cantidad,
-                    'show_url' => URL::route('noticias.show', $noticia),
-                    'edit_url' => URL::route('noticias.edit', $noticia),
-                    'destroy_url' => URL::route('noticias.destroy', $noticia),
-                ];
-            }),
-        ]);
+        $data = Noticia::all();
+        return Inertia::render('Noticias', ['data' => $data]);
     }
 
     /**
@@ -42,11 +29,12 @@ class NoticiaController extends Controller
     {
         Noticia::create(
             Request::validate([
-                'name' => ['required', 'max:50'],
-                'email' => ['required', 'max:50', 'email'],
+                'titulo' => ['required', 'max:50'],
+                'descripcion' => ['required'],
+                'autor' => ['required']
             ])
         );
-        return Redirect::route('noticia');
+        return Redirect::route('Noticias');
     }
 
     /**
@@ -57,7 +45,8 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Noticia::create($request->all());
+        return redirect()->back()->with('message', 'Noticia Created Successfully.');
     }
 
     /**
@@ -79,9 +68,11 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Noticia $noticia)
     {
-        //
+        return Inertia::render('Noticias/edit', [
+                    'noticia' => $noticia
+        ]);
     }
 
     /**
@@ -93,7 +84,10 @@ class NoticiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->has('id')) {
+            Noticia::find($request->input('id'))->update($request->all());
+            return redirect()->back()->with('message', 'Noticia Updated Successfully.');
+        }
     }
 
     /**
@@ -102,9 +96,11 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Noticia $noticia)
+    public function destroy(Request $request)
     {
-        $noticia->delete();
-        return redirect('/noticias');
+        if ($request->has('id')){
+            Noticia::find($request->input('id'))->delete();
+            return redirect()->back();
+        }
     }
 }

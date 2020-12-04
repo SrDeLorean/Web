@@ -21,6 +21,8 @@
         <link href="../assets/css/material-kit.css" rel="stylesheet" />
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="../assets/demo/demo.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
 
     </head>
     <body class="antialiased">
@@ -120,79 +122,67 @@
             </div>
     
             <!-- Noticias -->
-            <div class="section text-center">
-                <h2 class="title">Noticias</h2>
-                <div class="team">
+            <div class="container">
+                <div class="section text-center">
+                    <h2 class="title">Noticias</h2>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title">Gigi Hadid
-                                        <br>
-                                        <small class="card-description text-muted">Model</small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                    </div>
-                                    <div class="card-footer justify-content-center">
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-12 ml-auto mr-auto">
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="text-center">Fecha</th>
+                                        <th class="text-center">Titulo</th>
+                                        <th class="text-center">Descripcion</th>
+                                        <th class="text-center">Autor</th>
+                                        <th class="text-center">Valoracion</th>
+                                        <th class="text-center">Ver</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($noticias as $data)
+                                    <tr>
+                                        <td class="text-center">{{$data->created_at}}</td>
+                                        <td class="text-center">{{$data->titulo}}</td>
+                                        <td class="text-center">{{$data->descripcion}}</td>
+                                        <td class="text-center">{{$data->autor}}</td>
+                                        @if($data->valoracion===0 || $data->cantidad===0)
+                                        <td class="text-center">{{$data->valoracion/$data->cantidad}}</td>
+                                        @else
+                                        <td class="text-center">No hay valoraciones</td>
+                                        @endif
+                                        <td class="text-center">
+                                            <button class="btn btn-primary btn-round">Ver</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="../assets/img/faces/christian.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title">Christian Louboutin
-                                        <br>
-                                        <small class="card-description text-muted">Designer</small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                    </div>
-                                    <div class="card-footer justify-content-center">
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- medium modal -->
+            <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="../assets/img/faces/kendall.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title">Kendall Jenner
-                                        <br>
-                                        <small class="card-description text-muted">Model</small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                    </div>
-                                    <div class="card-footer justify-content-center">
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                        <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
-                                </div>
+                        <div class="modal-body" id="mediumBody">
+                            <div>
+                                <!-- the result to be displayed apply here -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
+
+           
             <!-- Contacto -->
             <div class="section section-contacts">
                 <div class="row">
@@ -283,5 +273,7 @@
     <!--  Google Maps Plugin    -->
     <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
+    
+
 
 </html>

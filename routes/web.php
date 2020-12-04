@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\Noticia;
 use App\Http\Controllers\NoticiaController;
 
 /*
@@ -16,7 +17,9 @@ use App\Http\Controllers\NoticiaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'noticias' => Noticia::all()
+    ]);
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
