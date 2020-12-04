@@ -3759,6 +3759,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -3838,7 +3839,7 @@ __webpack_require__.r(__webpack_exports__);
       this.closeModal();
     },
     deleteRow: function deleteRow(data) {
-      if (!confirm('Are you sure want to remove?')) return;
+      if (!confirm('¿Estas seguro que quieres eliminar este elemento?')) return;
       data._method = 'DELETE';
       this.$inertia.post('/noticias/' + data.id, data);
       this.reset();
@@ -78861,8 +78862,7 @@ var render = function() {
                           _c(
                             "button",
                             {
-                              staticClass:
-                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3",
+                              staticClass: "btn btn-primary",
                               on: {
                                 click: function($event) {
                                   return _vm.show(row)
@@ -78877,15 +78877,14 @@ var render = function() {
                           _c(
                             "button",
                             {
-                              staticClass:
-                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+                              staticClass: "btn btn-warning",
                               on: {
                                 click: function($event) {
                                   return _vm.edit(row)
                                 }
                               }
                             },
-                            [_vm._v("Edit")]
+                            [_vm._v("Editar")]
                           )
                         ]),
                         _vm._v(" "),
@@ -78893,15 +78892,14 @@ var render = function() {
                           _c(
                             "button",
                             {
-                              staticClass:
-                                "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded",
+                              staticClass: "btn btn-danger",
                               on: {
                                 click: function($event) {
                                   return _vm.deleteRow(row)
                                 }
                               }
                             },
-                            [_vm._v("Delete")]
+                            [_vm._v("Eliminar")]
                           )
                         ])
                       ])
@@ -82305,11 +82303,9 @@ var render = function() {
                   _c("tr", [
                     _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
                     _vm._v(" "),
-                    _c("th", { attrs: { scope: "col" } }, [_vm._v("titulo")]),
+                    _c("th", { attrs: { scope: "col" } }, [_vm._v("nombre")]),
                     _vm._v(" "),
-                    _c("th", { attrs: { scope: "col" } }, [
-                      _vm._v("descripcion")
-                    ])
+                    _c("th", { attrs: { scope: "col" } }, [_vm._v("correo")])
                   ])
                 ]),
                 _vm._v(" "),

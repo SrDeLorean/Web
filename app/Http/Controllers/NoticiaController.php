@@ -46,7 +46,7 @@ class NoticiaController extends Controller
     public function store(Request $request)
     {
         Noticia::create($request->all());
-        return redirect()->back()->with('message', 'Noticia Created Successfully.');
+        return redirect()->back()->with('message', 'Noticia creada con exito');
     }
 
     /**
@@ -86,7 +86,7 @@ class NoticiaController extends Controller
     {
         if ($request->has('id')) {
             Noticia::find($request->input('id'))->update($request->all());
-            return redirect()->back()->with('message', 'Noticia Updated Successfully.');
+            return redirect()->back()->with('message', 'Noticia modificada con exito.');
         }
     }
 
@@ -100,7 +100,7 @@ class NoticiaController extends Controller
     {
         if ($request->has('id')){
             Noticia::find($request->input('id'))->delete();
-            return redirect()->back();
+            return redirect()->back()->with('message', 'Noticia eliminada con exito.');
         }
     }
 }

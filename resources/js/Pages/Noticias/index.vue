@@ -36,13 +36,13 @@
                                 <td>{{row.descripcion}}</td>
                                 <td>{{row.autor}}</td>
                                 <td class="border px-4 py-2">
-                                    <button @click="show(row)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Ver</button>
+                                    <button @click="show(row)" class="btn btn-primary">Ver</button>
                                     </td>
                                 <td class="border px-4 py-2">
-                                    <button @click="edit(row)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                                    <button @click="edit(row)" class="btn btn-warning">Editar</button>
                                     </td>
                                 <td class="border px-4 py-2">
-                                    <button @click="deleteRow(row)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    <button @click="deleteRow(row)" class="btn btn-danger">Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -80,6 +80,7 @@
                                                 <label for="foto" class="block text-gray-700 text-sm font-bold mb-2">foto:</label>
                                                 <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="foto" placeholder="foto" v-model="form.foto">
                                                 <div v-if="$page.errors.autor" class="text-red-500">{{ $page.errors.autor[0] }}</div>
+                                                
                                             </div>
                                             <div class="mb-4">
                                                 <label for="valoracion" class="block text-gray-700 text-sm font-bold mb-2">valoracion:</label>
@@ -239,7 +240,7 @@
                 this.closeModal();
             },
             deleteRow: function (data) {
-                if (!confirm('Are you sure want to remove?')) return;
+                if (!confirm('¿Estas seguro que quieres eliminar este elemento?')) return;
                 data._method = 'DELETE';
                 this.$inertia.post('/noticias/' + data.id, data)
                 this.reset();

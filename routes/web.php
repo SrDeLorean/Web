@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Noticia;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\CorreoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Route::get('/', function () {
         'noticias' => Noticia::all()
     ]);
 });
+
+Route::post('/contacto', [CorreoController::class, 'store']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');

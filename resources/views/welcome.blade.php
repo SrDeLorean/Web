@@ -22,12 +22,13 @@
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="../assets/demo/demo.css" rel="stylesheet" />
 	
-	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     </head>
-    <body class="antialiased">
+    <body class="antialiased">            
         <!-- Navegación -->
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        <div id="home" class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
                 <div class="container">
                     <div class="navbar-translate">
@@ -41,27 +42,41 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
                         <li class="dropdown nav-item">
-                            <a href="#" class="nav-link" data-toggle="dropdown">
-                            <i class="material-icons">apps</i> Inicio
+                            <a href="#home" class="nav-link" target="_self">
+                                <span class="material-icons">
+                                    house
+                                    </span> Inicio
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro" target="_blank">
-                            <i class="material-icons">unarchive</i> Novedades
+                            <a class="nav-link" href="#novedades" target="_self">
+                                <span class="material-icons">
+                                    fiber_new
+                                    </span> Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#noticia" target="_self">
+                                <span class="material-icons">
+                                    receipt
+                                    </span> Noticias
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro" target="_blank">
-                            <i class="material-icons">unarchive</i> Noticias
+                            <a class="nav-link" href="#contacto" target="_self">
+                                <span class="material-icons">
+                                    call
+                                    </span> Contacto
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
                             @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('/dashboard') }}" class="nav-link" >Dashboard</a>
+                                    <a href="{{ url('/dashboard') }}" class="nav-link" ><span class="material-icons">
+                                        computer
+                                        </span>Dashboard</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="nav-link" >Login</a>
+                                    <a href="{{ route('login') }}" class="nav-link" ><span class="material-icons">account_circle</span>Login</a>
                                 @endif
                             @endif
                         </li>
@@ -84,7 +99,7 @@
         </div>
 
         <!-- Novedades -->
-        <div class="main main-raised">
+        <div id="novedades" class="main main-raised">
             <div class="container">
                 <div class="section text-center">
                     <h2 class="title">Novedades</h2>
@@ -122,7 +137,7 @@
             </div>
     
             <!-- Noticias -->
-            <div class="container">
+            <div id="noticia" class="container">
                 <div class="section text-center">
                     <h2 class="title">Noticias</h2>
                     <div class="row">
@@ -145,10 +160,10 @@
                                         <td class="text-center">{{$data->titulo}}</td>
                                         <td class="text-center">{{$data->descripcion}}</td>
                                         <td class="text-center">{{$data->autor}}</td>
-                                        @if($data->valoracion===0 || $data->cantidad===0)
-                                        <td class="text-center">{{$data->valoracion/$data->cantidad}}</td>
-                                        @else
+                                        @if($data->valoracion===0 || $data->cantidad===0 || $data->valoracion===null || $data->cantidad===null)
                                         <td class="text-center">No hay valoraciones</td>
+                                        @else
+                                        <td class="text-center">{{$data->valoracion/$data->cantidad}}</td>
                                         @endif
                                         <td class="text-center">
                                             <button class="btn btn-primary btn-round">Ver</button>
@@ -161,60 +176,43 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- medium modal -->
-            <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" id="mediumBody">
-                            <div>
-                                <!-- the result to be displayed apply here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
            
             <!-- Contacto -->
-            <div class="section section-contacts">
+            <div id="contacto" class="section section-contacts">
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
                         <h2 class="text-center title">Contactenos</h2>
                         <h4 class="text-center description">Si tiene alguna pregunta o sugerencia para la compañía puede realizarla a continuación, esto nos ayudara a mejorar para brindar el mejor servicio que este en nuestras manos, avancemos en conjunto.</h4>
-                        <form class="contact-form">
+                        <form class="contact-form" action="/contacto" method="POST">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Nombre</label>
-                                        <input type="email" class="form-control">
+                                        <label for="nombre" class="bmd-label-floating">Nombre</label>
+                                        <input name="nombre" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Correo</label>
-                                        <input type="email" class="form-control">
+                                        <label for="email" class="bmd-label-floating">Correo</label>
+                                        <input name="email" type="email" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleMessage" class="bmd-label-floating">Mensaje</label>
-                                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+                                <label for="body" class="bmd-label-floating">Mensaje</label>
+                                <textarea name="body" type="text" class="form-control" rows="4" id="body"></textarea>
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <div class="g-recaptcha" data-sitekey="6Let0fgZAAAAAG_6LuIKa54U0750Mp40p0kfzwBc"></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
-                                    <button class="btn btn-primary btn-raised">
+                                    <button type="submit" id='btn-contact' class="btn btn-primary btn-raised">
                                     Enviar Mensaje
                                     </button>
                                 </div>
-                            </div>
+                            </div>                         
                         </form>
                     </div>
                 </div>
@@ -222,6 +220,7 @@
 
         <!-- Div de cierre -->
         </div>
+
         
     </body>
 
@@ -262,6 +261,7 @@
     </footer>
     
     <!--   Core JS Files   -->
+    
     <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
     <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
     <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>

@@ -13,8 +13,8 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">id</th>
-                                <th scope="col">titulo</th>
-                                <th scope="col">descripcion</th>
+                                <th scope="col">nombre</th>
+                                <th scope="col">correo</th>
                             </tr>
                         </thead>
                         <tbody>
